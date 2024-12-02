@@ -1,8 +1,13 @@
 {
 	"name": "@meeg/vite-plugin-inspect-config",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Write the resolved Vite config to disk for easy inspection when developing Vite plugins.",
-	"keywords": ["vite", "vite-plugin", "debug", "config"],
+	"keywords": [
+		"vite",
+		"vite-plugin",
+		"debug",
+		"config"
+	],
 	"author": "Chris Meagher",
 	"license": "MIT",
 	"repository": {
@@ -14,7 +19,11 @@
 	},
 	"homepage": "https://github.com/CMeeg/vite-plugin-inspect-config#readme",
 	"type": "module",
-	"files": ["dist", "LICENSE", "README.md"],
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md"
+	],
 	"main": "./dist/plugin.cjs",
 	"module": "./dist/plugin.js",
 	"types": "./dist/src/plugin.d.ts",
