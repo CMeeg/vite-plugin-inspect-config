@@ -1,0 +1,47 @@
+{
+	"name": "@meeg/vite-plugin-inspect-config",
+	"version": "0.0.0",
+	"description": "Write the resolved Vite config to disk for easy inspection when developing Vite plugins.",
+	"keywords": ["vite", "vite-plugin", "debug", "config"],
+	"author": "Chris Meagher",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CMeeg/vite-plugin-inspect-config.git"
+	},
+	"bugs": {
+		"url": "https://github.com/CMeeg/vite-plugin-inspect-config/issues"
+	},
+	"homepage": "https://github.com/CMeeg/vite-plugin-inspect-config#readme",
+	"type": "module",
+	"files": ["dist", "LICENSE", "README.md"],
+	"main": "./dist/plugin.cjs",
+	"module": "./dist/plugin.js",
+	"types": "./dist/src/plugin.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/plugin.js",
+			"require": "./dist/plugin.cjs",
+			"types": "./dist/src/plugin.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "vite build",
+		"check": "tsc",
+		"lint": "biome check"
+	},
+	"devDependencies": {
+		"@types/node": "^22.8.7",
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"vite-plugin-dts": "^4.3.0",
+		"vite-plugin-externalize-deps": "^0.8.0",
+		"vite-tsconfig-paths": "^5.0.1"
+	},
+	"peerDependencies": {
+		"vite": "^5.0.0"
+	},
+	"engines": {
+		"node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+	}
+}
