@@ -18,10 +18,7 @@ function inspectConfigPlugin(options?: Partial<InspectConfigPluginOptions>): Plu
 	return {
 		name: "inspect-config",
 		configResolved: async (resolvedConfig) => {
-			const outputDir = join(
-				opts.cwd,
-				opts.outputDir ?? join((resolvedConfig.base ?? "").replaceAll("/", ""), ".vite-config")
-			)
+			const outputDir = join(opts.cwd, opts.outputDir ?? ".vite-config")
 
 			if (!existsSync(outputDir)) {
 				await mkdir(outputDir, { recursive: true })
