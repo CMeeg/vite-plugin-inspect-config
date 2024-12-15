@@ -1,6 +1,6 @@
 {
 	"name": "@meeg/vite-plugin-inspect-config",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Write the resolved Vite config to disk for easy inspection when developing Vite plugins.",
 	"keywords": [
 		"vite",
