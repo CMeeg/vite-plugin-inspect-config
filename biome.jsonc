@@ -25,7 +25,7 @@
 		"lineWidth": 120,
 		"useEditorconfig": true
 	},
-	"assist": { "actions": { "source": { "organizeImports": "off" } } },
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"javascript": {
 		"linter": {
 			"enabled": true

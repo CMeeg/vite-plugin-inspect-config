@@ -29,6 +29,5 @@ function inspectConfigPlugin(options?: Partial<InspectConfigPluginOptions>): Plu
 	}
 }
 
-export { inspectConfigPlugin as inspectConfig }
-
 export type { InspectConfigPluginOptions }
+export { inspectConfigPlugin as inspectConfig }
