@@ -15,8 +15,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
-    name: Lint
+  ci:
+    name: CI
     runs-on: ubuntu-latest
     timeout-minutes: 5
     strategy:
