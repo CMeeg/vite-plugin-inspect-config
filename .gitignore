@@ -1,5 +1,4 @@
-.nx/cache
-.nx/workspace-data
+.turbo/
 .vite-config/
 dist/
 node_modules/
