@@ -19,27 +19,33 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    strategy:
+      matrix:
+        node-version: [22.x, 24.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
+          node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build packages
-        run: pnpm lerna run build
+        run: pnpm build
 
       - name: Lint source code
-        run: pnpm lerna run lint
+        run: pnpm lint
 
       - name: Check source code
-        run: pnpm lerna run check
+        run: pnpm check
+
+      - name: Test
+        run: pnpm test
