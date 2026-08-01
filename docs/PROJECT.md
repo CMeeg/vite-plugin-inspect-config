@@ -49,6 +49,6 @@ Vite plugin authors and maintainers debugging configuration changes during devel
 
 ## Riskiest Unknowns
 
-- TODO: Confirm the final declaration output path remains stable with `vite-plugin-dts` and Rolldown.
-- TODO: Confirm Node built-ins remain external in all supported build modes.
-- TODO: Confirm `vue-tsc` 3 behavior with TypeScript 6 in the example consumer.
+- Declaration output matched the package `types` field in the Vite 8 build.
+- Node built-ins were verified external in the built output.
+- The Vue example built successfully with `vue-tsc` 3 and TypeScript 6.
