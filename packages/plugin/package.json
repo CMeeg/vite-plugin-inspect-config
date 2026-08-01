@@ -30,7 +30,8 @@
 	"scripts": {
 		"build": "vite build",
 		"check": "tsc",
-		"lint": "biome check"
+		"lint": "biome check",
+		"test": "vitest run"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.2",
@@ -38,7 +39,8 @@
 		"vite": "catalog:",
 		"vite-plugin-dts": "^4.3.0",
 		"vite-plugin-externalize-deps": "^0.8.0",
-		"vite-tsconfig-paths": "^5.1.4"
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.2.7"
 	},
 	"peerDependencies": {
 		"vite": "^5.0.0 || ^6.0.0"
