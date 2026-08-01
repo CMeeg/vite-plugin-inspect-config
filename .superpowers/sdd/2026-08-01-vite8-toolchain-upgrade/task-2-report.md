@@ -87,3 +87,17 @@ $ git diff --check
 - The environment used for verification is Node `v24.16.0`; `.nvmrc` now requests `v24.18.1`.
 - pnpm reported one deprecated transitive subdependency (`tsconfck@3.1.4`) and peer dependency warnings during installation. These are pre-existing dependency-tree concerns and were not changed in this task.
 - The initial Corepack activation required `CI=true` because the shell had no TTY for pnpm's modules-directory purge confirmation.
+
+## Review Fix
+
+Removed the remaining legacy `lerna-debug.log` ignore entry from `.gitignore`.
+
+Focused verification:
+
+```text
+$ git diff --check
+# no output; exit 0
+
+$ git grep -n lerna -- .gitignore package.json turbo.json lerna.json nx.json
+# no output; exit 1 because deleted files are absent and no scoped matches remain
+```

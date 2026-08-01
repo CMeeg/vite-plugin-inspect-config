@@ -6,6 +6,5 @@ node_modules/
 *.tmp
 *.tsbuildinfo
 .DS_Store
-lerna-debug.log
 TODO.md
 vite.config.ts.*
