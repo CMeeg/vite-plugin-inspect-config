@@ -23,7 +23,7 @@ afterEach(async () => {
 
 describe("inspectConfig", () => {
 	it("returns a plugin with the expected name and configResolved hook", async () => {
-		const { inspectConfig } = await import("../src/plugin")
+		const { inspectConfig } = await import("./plugin")
 		const plugin = inspectConfig() as unknown as TestPlugin
 		expect(plugin.name).toBe("inspect-config")
 		expect(typeof plugin.configResolved).toBe("function")
@@ -35,7 +35,7 @@ describe("inspectConfig", () => {
 		process.chdir(dir)
 		try {
 			vi.resetModules()
-			const { inspectConfig } = await import("../src/plugin?default-cwd-test")
+			const { inspectConfig } = await import("./plugin")
 			const plugin = inspectConfig() as unknown as TestPlugin
 			await plugin.configResolved({ root: dir })
 			const content = await readFile(join(dir, ".vite-config", "vite.config.json"), "utf8")
@@ -47,7 +47,7 @@ describe("inspectConfig", () => {
 
 	it("writes the resolved config to a custom outputDir", async () => {
 		const dir = await makeTempDir()
-		const { inspectConfig } = await import("../src/plugin")
+		const { inspectConfig } = await import("./plugin")
 		const plugin = inspectConfig({ cwd: dir, outputDir: "custom-out" }) as unknown as TestPlugin
 		await plugin.configResolved({ foo: "bar" })
 		const content = await readFile(join(dir, "custom-out", "vite.config.json"), "utf8")
@@ -56,7 +56,7 @@ describe("inspectConfig", () => {
 
 	it("writes the resolved config during vite's config resolution", async () => {
 		const dir = await makeTempDir()
-		const { inspectConfig } = await import("../src/plugin")
+		const { inspectConfig } = await import("./plugin")
 		await resolveConfig(
 			{
 				configFile: false,
